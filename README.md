@@ -1,20 +1,43 @@
 # TopDownRPG
 
-## What is this
-A top-down RPG combat demo built with C++ and raylib.
+A top-down RPG combat demo built with **C++** and **raylib**, featuring enemy AI, grid-based pathfinding, and unit-tested core systems.
 
 ## Technical Highlights
-- Finite State Machine: enemy AI with Idle / Chase / Attack / Dead states
-- A* Pathfinding: enemies navigate around obstacles to reach the player
-- Google Test: 14 unit tests covering correctness, path structure, and edge cases
+
+| System | Details |
+|--------|---------|
+| Finite State Machine | Enemy AI cycles through Idle → Chase → Attack → Dead states |
+| A\* Pathfinding | Enemies navigate around obstacles to reach the player in real time |
+| Google Test | 14 unit tests covering path correctness, structure, and edge cases |
 
 ## Controls
-- WASD: move
-- SPACE: attack
-- R: restart
+
+| Key | Action |
+|-----|--------|
+| `WASD` | Move |
+| `SPACE` | Attack |
+| `R` | Restart |
 
 ## How to Build
-Requires: CMake, raylib, Google Test
 
-cmake -B build && cmake --build build
+**Requirements:** CMake, raylib, Google Test
+
+```bash
+cmake -B build
+cmake --build build
 ./build/game.exe
+```
+
+## Run Tests
+
+```bash
+cd build
+ctest --output-on-failure
+```
+
+## Tech Stack
+
+- C++17
+- [raylib](https://www.raylib.com/)
+- [Google Test](https://github.com/google/googletest)
+- CMake
