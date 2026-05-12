@@ -1,0 +1,59 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build raylib",
+            "type": "shell",
+            "options": {
+                "shell": {
+                    "executable": "cmd.exe",
+                    "args": ["/c"]
+                }
+            },
+            "command": "set PATH=C:\\raylib\\w64devkit\\bin;%PATH% && g++.exe \"${workspaceFolder}\\src\\*.cpp\" -o \"${workspaceFolder}\\build\\game.exe\" -I C:\\raylib\\raylib\\src -L C:\\raylib\\raylib\\src -lraylib -lopengl32 -lgdi32 -lwinmm",
+            "problemMatcher": ["$gcc"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Build & Run raylib",
+            "type": "shell",
+            "options": {
+                "shell": {
+                    "executable": "cmd.exe",
+                    "args": ["/c"]
+                }
+            },
+            "command": "set PATH=C:\\raylib\\w64devkit\\bin;%PATH% && g++.exe \"${workspaceFolder}\\src\\*.cpp\" -o \"${workspaceFolder}\\build\\game.exe\" -I C:\\raylib\\raylib\\src -L C:\\raylib\\raylib\\src -lraylib -lopengl32 -lgdi32 -lwinmm && \"${workspaceFolder}\\build\\game.exe\"",
+            "problemMatcher": ["$gcc"],
+            "group": "build"
+        },
+        {
+            "label": "CMake Configure Tests",
+            "type": "shell",
+            "options": {
+                "shell": {
+                    "executable": "cmd.exe",
+                    "args": ["/c"]
+                }
+            },
+            "command": "set PATH=C:\\raylib\\w64devkit\\bin;%PATH% && cmake -S \"${workspaceFolder}\" -B \"${workspaceFolder}\\build-test\" -G \"MinGW Makefiles\"",
+            "problemMatcher": []
+        },
+        {
+            "label": "Build & Run Tests",
+            "type": "shell",
+            "options": {
+                "shell": {
+                    "executable": "cmd.exe",
+                    "args": ["/c"]
+                }
+            },
+            "command": "set PATH=C:\\raylib\\w64devkit\\bin;%PATH% && cmake --build \"${workspaceFolder}\\build-test\" --target test_astar && \"${workspaceFolder}\\build-test\\test_astar.exe\"",
+            "problemMatcher": ["$gcc"],
+            "group": "test"
+        }
+    ]
+}
