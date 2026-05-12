@@ -2,6 +2,9 @@
 
 A top-down RPG combat demo built with **C++** and **raylib**, featuring enemy AI, grid-based pathfinding, and unit-tested core systems.
 
+![Gameplay](assets/gameplay.png)
+*Prototype — focused on AI and pathfinding systems*
+
 ## Technical Highlights
 
 | System | Details |
